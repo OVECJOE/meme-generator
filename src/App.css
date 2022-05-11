@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App-logo {
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 7px rgb(254, 176, 71);
+}
+
+
+.App-header {
+  background-color: rgb(74, 50, 108);
+  padding: .6rem 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-header h3 {
+  font-family: monospace;
+  letter-spacing: -1px;
+  word-spacing: -10px;
+  color: rgb(254, 176, 71);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem 4rem 1.5rem;
+}
+
+.meme-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: "Poppins";
+}
+
+.meme-form .meme-input {
+  display: flex;
+  gap: 2.2rem;
+  justify-content: center;
+}
+
+.meme-input input {
+  width: 50%;
+  height: 30px;
+  padding: .2rem 0;
+  text-indent: 1.5rem;
+  border: 1px solid rgb(254, 176, 71);
+  border-radius: 5px;
+}
+
+.meme-form button {
+  display: flex;
+  gap: .3rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  height: 45px;
+  background-color: rgb(74, 50, 108);
+  color: rgb(254, 176, 71);
+  border: 0;
+  font-size: calc(5px + 2vmin);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+
+.image-card {
+  border-radius: 5px;
+  width: 60%;
+  max-height: 550px;
+  padding: 0;
+  margin: 1.8rem 0 1.2rem;
+  border: 1px outset rgb(254, 176, 71);
+  box-shadow: 1px 2px 10px rgb(74, 50, 108);
+  align-self: center;
+}
+
+.image-card img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 767px) {
+  .image-card {
+    width: 100%;
+  }
+}
