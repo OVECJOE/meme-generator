@@ -7,11 +7,11 @@ export default function MemeForm() {
 
     // const [memeImage, setMemeImage] = React.useState(randomImageUrl);
     const [meme, setMeme] = React.useState({
-        topText: "top",
-        bottomText: "bottom",
+        topText: "",
+        bottomText: "",
         randomImage: randomImageUrl,
     });
-    const [allMemeImages, setAllMemeImages] = React.useState(memesData);
+    // const [allMemeImages, setAllMemeImages] = React.useState(memesData);
 
     function getMemeImage() {
         const randomNum = Math.floor(Math.random() * memes.length);
@@ -23,12 +23,30 @@ export default function MemeForm() {
         }));
     }
 
+    function handleChange(event) {
+        const {name, value} = event.target;
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            [name]: value
+        }))
+    }
+
     return (
         <main>
             <div className="meme-form">
                 <div className="meme-input">
-                    <input type="text" name="top" placeholder="top text" />
-                    <input type="text" name="down" placeholder="bottom text" />
+                    <input
+                        type="text"
+                        placeholder="top text"
+                        name="topText"
+                        onChange={handleChange}
+                    />
+                    <input
+                        type="text"
+                        name="bottomText"
+                        placeholder="bottom text"
+                        onChange={handleChange}
+                    />
                 </div>
                 <button type="button" onClick={getMemeImage}>
                     <span>Get a new meme image</span>
@@ -37,6 +55,8 @@ export default function MemeForm() {
             </div>
             <div className="image-card">
                 <img src={meme.randomImage} alt={memesData.data.name} />
+                <h2 className="meme-text top">{meme.topText}</h2>
+                <h2 className="meme-text bottom">{meme.bottomText}</h2>
             </div>
         </main>
     )

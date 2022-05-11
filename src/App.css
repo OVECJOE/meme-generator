@@ -74,25 +74,62 @@ main {
 
 
 .image-card {
+  position: relative;
   border-radius: 5px;
-  width: 60%;
-  max-height: 550px;
+  width: 65%;
+  height: 75vh;
+  margin: auto;
   padding: 0;
   margin: 1.8rem 0 1.2rem;
   border: 1px outset rgb(254, 176, 71);
   box-shadow: 1px 2px 10px rgb(74, 50, 108);
   align-self: center;
+  text-align: center;
 }
 
 .image-card img {
-  position: relative;
   height: 100%;
   width: 100%;
   border-radius: 3px;
 }
 
-@media screen and (max-width: 767px) {
+.top,
+.bottom {
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  margin: 1rem 0;
+  padding: 0;
+  font-family: impact;
+  font-size: calc(2.5rem - 2vmin);
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 0 #000,
+    -2px -2px 0 rgb(74, 50, 108),
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    0px 2px 0 rgb(74, 50, 108),
+    2px 0px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 2px 5px rgb(74, 50, 108);
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+@media screen and (max-width: 1024px) {
   .image-card {
     width: 100%;
+  }
+
+  .top, .bottom {
+    font-size: calc(2.2rem - 2vmin)
   }
 }
